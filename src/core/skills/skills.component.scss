@@ -1,0 +1,48 @@
+@import "../../styles.scss";
+.skillsWrapper {
+  background-color: $dark;
+  text-align: center;
+  align-content: center;
+  font-family: "Raleway", sans-serif;
+  color: $light;
+  padding-bottom: 40px;
+  .title {
+    color: $light;
+    font-weight: 900;
+    padding-top: 50px;
+  }
+  hr {
+    width: 50px;
+    background: $light;
+    height: 4px;
+    border-radius: 50px;
+  }
+  .row {
+    margin: auto;
+
+    .skills {
+      margin-top: 50px;
+    }
+
+    .description {
+      padding: 5px 0 5px 0;
+      img {
+        width: 40px;
+      }
+    }
+    .knowledge {
+      display: flex;
+      align-items: center;
+
+      .fullBar {
+        width: 100%;
+        background-color: $progress;
+        height: 5px;
+        .percent {
+          height: 5px;
+          background-color: $accent;
+        }
+      }
+    }
+  }
+}

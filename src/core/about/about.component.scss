@@ -1,0 +1,56 @@
+@import "../../styles.scss";
+.aboutWrapper {
+  background-color: $light;
+  text-align: center;
+  align-content: center;
+  font-family: "Raleway", sans-serif;
+  .title {
+    color: $dark;
+    font-weight: 900;
+    margin-top: 50px;
+  }
+  hr {
+    width: 50px;
+    background: $dark;
+    height: 4px;
+    border-radius: 50px;
+  }
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .feature {
+      width: 100px;
+      text-align: center;
+      line-height: 75px;
+      img {
+        width: 50px;
+      }
+    }
+  }
+  .info {
+    height: auto;
+    width: 100%;
+    color: $dark;
+    margin: auto;
+    .photo {
+      padding: 20px;
+      img {
+        width: 150px;
+        border-radius: 50%;
+      }
+    }
+    .text {
+      margin-top: 25px;
+      text-align: left;
+      .social {
+        margin: 25px 0 25px 0;
+        text-align: center;
+        width: 100%;
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+}

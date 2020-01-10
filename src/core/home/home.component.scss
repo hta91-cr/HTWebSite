@@ -1,0 +1,50 @@
+@import "../../styles.scss";
+.bodyWrapper {
+  height: 100%;
+  height:100%;
+  font-family: 'Raleway', sans-serif;
+  .body {
+    padding-top: 55vh;
+    transform: translate(0, -15%);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    /* height: inherit; */
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+  .titleWrapper {
+    width: 100%;
+    .title {
+      color: $light;
+      font-size: 1.5em;
+      .name {
+        color: $accent;
+      }
+    }
+    .subtitle {
+      color: $detail;
+      font-size: 1.2em;
+    }
+  }
+  .btnWrapper {
+    width: 100%;
+    .mainBtn {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: $accent;
+      color: $light;
+      border: none;
+      border-radius: 0;
+      .arrow {
+        vertical-align: middle;
+      }
+    }
+  }
+  .scroll {
+    width: 40px;
+    margin-top: 25vh;
+  }
+}
