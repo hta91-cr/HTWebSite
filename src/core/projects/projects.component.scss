@@ -1,0 +1,29 @@
+@import "../../styles.scss";
+.projectsWrapper{
+    background-color: $light;
+    text-align: center;
+    align-content: center;
+    font-family: "Raleway", sans-serif;
+    padding-bottom: 40px;
+    .title {
+      color: $dark;
+      font-weight: 900;
+      margin-top: 50px;
+    }
+    hr {
+        width: 50px;
+        background: $dark;
+        height: 4px;
+        border-radius: 50px;
+      }
+}
+/*Card styles*/
+.card-title{
+    color: $dark;
+}
+.card-subtitle{
+    color:$accent;
+}
+.site-link{
+    color: $detail;
+}
