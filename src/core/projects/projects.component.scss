@@ -24,6 +24,17 @@
 .card-subtitle{
     color:$accent;
 }
+
 .site-link{
     color: $detail;
+}
+.card-body{
+    background-color: $light !important;
+}
+
+.apple-icon{
+    color:$dark;
+}
+.android-icon{
+    color:$accent;
 }
