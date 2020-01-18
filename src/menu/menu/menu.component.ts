@@ -32,6 +32,7 @@ export class MenuComponent implements OnInit {
 
   showMenu: Boolean = false;
   showMainMenu: Boolean = false;
+  innerWidth = 0;
   ngOnInit() {}
   @HostListener("window:scroll", ["$event"])
   scrollHandler(event) {
@@ -42,6 +43,10 @@ export class MenuComponent implements OnInit {
       this.showMenu = false;
     }
   }
+  @HostListener('window:resize', ['$event'])
+onResize(event) {
+  this.innerWidth = window.innerWidth;
+}
   toggleMenu() {
     this.showMenu = !this.showMenu;
   }
