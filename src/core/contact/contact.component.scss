@@ -1,0 +1,45 @@
+@import "../../styles.scss";
+.contactWrapper{
+    background: $dark;
+    text-align: center;
+    align-content: center;
+    .title {
+        color: $light;
+        font-weight: 900;
+        margin-top: 50px;
+      }
+      hr {
+        width: 50px;
+        background: $accent;
+        height: 4px;
+        border-radius: 50px;
+      }
+      .card-header{
+          background-color: $accent;
+          color: $dark;
+          h5{
+            font-size: 20px;
+            font-weight: 700;
+          }
+      }
+      .card-body{
+          background-color: $form;
+          .form-control{
+            color: $light;
+          }
+          .btn{
+              color:$light;
+              border: 5px solid $light;
+              border-radius: 50%;
+              padding: 25px;
+              text-align: end;
+              .send-icon{
+                  color: $accent;
+              }
+          }
+          .btn:hover {
+            background:$light;
+        }
+      }
+      
+}

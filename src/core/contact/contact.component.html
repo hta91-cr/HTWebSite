@@ -1,0 +1,50 @@
+<div class="contactWrapper">
+    <div class="container pb-4">
+        <h2 class="title py-4">Contact Me</h2>
+        <hr />
+        <mdb-card>
+            <!--Card content-->
+            <mdb-card-body class="px-lg-5 pt-0 card-body ">
+
+                <!-- Form -->
+                <form class="text-center form">
+
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" id="fname" class="form-control" mdbInput>
+                                <label for="fname">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="email" id="lname" class="form-control" mdbInput>
+                                <label for="lname">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="md-form mt-0">
+                        <input type="email" id="email" class="form-control" mdbInput>
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="md-form">
+                        <textarea type="text" id="msg" class="form-control md-textarea"
+                            mdbInput></textarea>
+                        <label for="msg">Message</label>
+                    </div>
+
+                    <!-- Sign up button -->
+                    <button mdbBtn outline="true" (click)="sendEmail()"
+                        class="waves-effect z-depth-0" mdbWavesEffect type="submit"><mdb-icon *ngIf="!loading" fas class="send-icon" icon="paper-plane" size="2x"></mdb-icon><img *ngIf="loading" src="../../assets/loading.svg" style="width: 50px;" alt=""></button>
+                </form>
+                <!-- Form -->
+
+            </mdb-card-body>
+
+        </mdb-card>
+    </div>
+</div>

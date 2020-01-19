@@ -16,6 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SkillsComponent } from '../core/skills/skills.component';
 import { ProjectsComponent } from '../core/projects/projects.component';
+import { ContactComponent } from '../core/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ProjectsComponent } from '../core/projects/projects.component';
     HomeComponent,
     AboutComponent,
     SkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

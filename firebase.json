@@ -1,10 +1,21 @@
 {
   "hosting": {
     "public": "dist/ng-uikit-pro-standard",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|css|js|woff2|svg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ],
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ]
+      }
     ],
     "rewrites": [
       {
