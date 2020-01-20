@@ -1,4 +1,4 @@
-<div class="contactWrapper">
+<div class="contactWrapper" id="contactWrapper">
     <div class="container pb-4">
         <h2 class="title py-4">Contact Me</h2>
         <hr />
@@ -7,44 +7,121 @@
             <mdb-card-body class="px-lg-5 pt-0 card-body ">
 
                 <!-- Form -->
-                <form class="text-center form">
+                <form [formGroup]="mailForm" class="text-center form">
 
                     <div class="form-row">
                         <div class="col">
                             <!-- First name -->
                             <div class="md-form">
-                                <input type="text" id="fname" class="form-control" mdbInput>
+                                <input type="text" id="fname" class="form-control" mdbInput formControlName="name">
                                 <label for="fname">First name</label>
+                            </div>
+                            <div *ngIf="mailForm.controls['name'].invalid && (mailForm.controls['name'].dirty || mailForm.controls['name'].touched)"
+                                style="color: red; margin-top: -25px; text-align: left;">
+                                <div *ngIf="mailForm.controls['name'].errors.required">
+                                    First name is required.
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <!-- Last name -->
                             <div class="md-form">
-                                <input type="email" id="lname" class="form-control" mdbInput>
+                                <input type="text" id="lname" class="form-control" mdbInput formControlName="lastname">
                                 <label for="lname">Last name</label>
+                            </div>
+                            <div *ngIf="mailForm.controls['lastname'].invalid && (mailForm.controls['lastname'].dirty || mailForm.controls['lastname'].touched)"
+                                style="color: red; margin-top: -25px; text-align: left;">
+                                <div *ngIf="mailForm.controls['lastname'].errors.required">
+                                    Last name is required.
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- E-mail -->
                     <div class="md-form mt-0">
-                        <input type="email" id="email" class="form-control" mdbInput>
+                        <input type="email" id="email" class="form-control" mdbInput formControlName="email">
                         <label for="email">E-mail</label>
                     </div>
+                    <div *ngIf="mailForm.controls['email'].invalid && (mailForm.controls['email'].dirty || mailForm.controls['email'].touched)"
+                        style="color: red; margin-top: -25px; text-align: left;">
+                        <div *ngIf="mailForm.controls['email'].hasError('required')">
+                            Email is required.
+                        </div>
+                        <div *ngIf="mailForm.controls['email'].hasError('email')">
+                            Email is invalid
+                        </div>
+                    </div>
                     <div class="md-form">
-                        <textarea type="text" id="msg" class="form-control md-textarea"
+                        <textarea type="text" id="msg" class="form-control md-textarea" formControlName="message"
                             mdbInput></textarea>
                         <label for="msg">Message</label>
                     </div>
-
+                    <div *ngIf="mailForm.controls['message'].invalid && (mailForm.controls['message'].dirty || mailForm.controls['message'].touched)"
+                        style="color: red; margin-top: -25px; text-align: left;">
+                        <div *ngIf="mailForm.controls['message'].errors.required">
+                            Message is required.
+                        </div>
+                    </div>
                     <!-- Sign up button -->
                     <button mdbBtn outline="true" (click)="sendEmail()"
-                        class="waves-effect z-depth-0" mdbWavesEffect type="submit"><mdb-icon *ngIf="!loading" fas class="send-icon" icon="paper-plane" size="2x"></mdb-icon><img *ngIf="loading" src="../../assets/loading.svg" style="width: 50px;" alt=""></button>
+                        [disabled]="mailForm.pristine || mailForm.invalid" class="waves-effect z-depth-0" mdbWavesEffect
+                        type="submit">
+                        <mdb-icon *ngIf="!loading" fas class="send-icon" icon="paper-plane" size="2x"></mdb-icon>
+                        <div class="spinner-grow spinner" role="status" *ngIf="loading">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
                 </form>
                 <!-- Form -->
 
             </mdb-card-body>
 
         </mdb-card>
+    </div>
+    <button id="modal-btn" type="button" style="display: none;" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
+        (click)="frame.show()" mdbWavesEffect>Launch Modal</button>
+
+    <div mdbModal #frame="mdbModal" class="modal fade right modal-scrolling" id="frameModalTop" tabindex="-1"
+        role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+        [config]="{backdrop: false, ignoreBackdropClick: true}">
+        <div class="modal-dialog modal-side modal-bottom-right modal-notify" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading">Email Sent
+                    </p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <p></p>
+                            <p class="text-center modal-icon">
+                                <mdb-icon fas icon="check" size="4x" class="animated rotateIn"></mdb-icon>
+                            </p>
+                        </div>
+
+                        <div class="col-9">
+                            <p>Your email has been sent, Thank you.</p>
+                            <p>I will be contacting you soon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" id="modal-hidebtn" mdbBtn class="waves-effect footer-btn" mdbWavesEffect (click)="frame.hide()">Accept</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
     </div>
 </div>
