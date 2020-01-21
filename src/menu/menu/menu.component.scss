@@ -63,4 +63,45 @@
       }
     }
   }
+  .menuPC {
+    width: 100%;
+   .menu-pc{
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+     background-color: $accent;
+     height: 50px;
+     .logoWrapper{
+       width: 100px;
+     .logo{
+      height: 90px;
+      width: 90px;
+      margin-top: -20px;
+     }
+    }
+   }
+   .options{
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+    float: right;
+    margin-top: 8px;
+    li {
+      display: block;
+      a {
+        color: $dark;
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+    .opt {
+      margin-right: 45px;
+    }
+    .first {
+      margin-right: 10px;
+    }
+   }
+}
 }

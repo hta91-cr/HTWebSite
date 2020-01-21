@@ -33,7 +33,9 @@ export class MenuComponent implements OnInit {
   showMenu: Boolean = false;
   showMainMenu: Boolean = false;
   innerWidth = 0;
-  ngOnInit() {}
+  ngOnInit() {
+    this.innerWidth = window.innerWidth;
+  }
   @HostListener("window:scroll", ["$event"])
   scrollHandler(event) {
     if (window.pageYOffset > 400) {

@@ -27,6 +27,9 @@
           .form-control{
             color: $light;
           }
+          textarea {
+            white-space: pre-wrap;
+          }
           .btn{
               color:$accent;
               border: 5px solid $accent;

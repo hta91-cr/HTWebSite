@@ -1,53 +1,66 @@
 <div class="wrapper">
-  <div
-    class="menuWrapper z-depth-2 animated fadeInDown"
-    [@openClose]="showMainMenu ? 'open' : 'closed'"
-  >
-    <div class="logoWrapper" [@openClose]="showMainMenu ? 'open' : 'closed'">
-      <img src="../../assets/logo-white.webp" alt="" class="logo" />
+  <!-- Menu -->
+  <div class="menuPhone" *ngIf="innerWidth<576">
+    <div class="menuWrapper z-depth-2 animated fadeInDown" [@openClose]="showMainMenu ? 'open' : 'closed'">
+      <div class="logoWrapper" [@openClose]="showMainMenu ? 'open' : 'closed'">
+        <img src="../../assets/logo-white.webp" alt="" class="logo" />
+      </div>
+      <div class="menuButtonWrapper" [@openClose]="showMainMenu ? 'open' : 'closed'">
+        <img [@openClose]="showMainMenu ? 'open' : 'closed'" (click)="toggleMenu()" src="../../assets/hamburger.svg"
+          alt="menu" class="menuButton" />
+      </div>
     </div>
-    <div
-      class="menuButtonWrapper"
-      [@openClose]="showMainMenu ? 'open' : 'closed'"
-    >
-      <img
-        [@openClose]="showMainMenu ? 'open' : 'closed'"
-        (click)="toggleMenu()"
-        src="../../assets/hamburger.svg"
-        alt="menu"
-        class="menuButton"
-      />
+
+    <div class="hiddenMenu z-depth-2" [@openClose]="showMenu ? 'open' : 'closed'">
+      <ul class="options list-unstyled">
+        <li class="opt">
+          <a href="#aboutWrapper" mdbPageScroll><img src="../../assets/user.svg" alt="" class="imgLinks" /></a>
+        </li>
+        <li class="opt">
+          <a href="#skillsWrapper" mdbPageScroll><img src="../../assets/skills.svg" alt="" class="imgLinks" /></a>
+        </li>
+        <li class="opt">
+          <a href="#projectsWrapper" mdbPageScroll><img src="../../assets/projects.svg" alt="" class="imgLinks" /></a>
+        </li>
+        <li class="first">
+          <a href="#contactWrapper" mdbPageScroll><img src="../../assets/contact.svg" alt="" class="imgLinks" /></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="menuPC" *ngIf="innerWidth>=576" [@openClose]="showMainMenu ? 'open' : 'closed'">
+    <div class="container-fluid">
+      <div class="row z-depth-2 animated fadeInDown menu-pc">
+        <div class="col-md-1 col-sm-1  logoWrapper">
+          <img src="../../assets/logo-white.webp" alt="" class="logo" />
+        </div>
+        <div class="col-sm-11 col-md-11">
+          <ul class="options list-unstyled">
+            <li class="opt">
+              <a href="#aboutWrapper" mdbPageScroll><img src="../../assets/user.svg" alt="" class="imgLinks" /></a>
+            </li>
+            <li class="opt">
+              <a href="#skillsWrapper" mdbPageScroll><img src="../../assets/skills.svg" alt="" class="imgLinks" /></a>
+            </li>
+            <li class="opt">
+              <a href="#projectsWrapper" mdbPageScroll><img src="../../assets/projects.svg" alt=""
+                  class="imgLinks" /></a>
+            </li>
+            <li class="first">
+              <a href="#contactWrapper" mdbPageScroll><img src="../../assets/contact.svg" alt="" class="imgLinks" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="hiddenMenu z-depth-2" [@openClose]="showMenu ? 'open' : 'closed'">
-    <ul class="options list-unstyled">
-      <li class="opt">
-        <a href="#aboutWrapper" mdbPageScroll
-          ><img src="../../assets/user.svg" alt="" class="imgLinks"
-        /></a>
-      </li>
-      <li class="opt">
-        <a href="#skillsWrapper" mdbPageScroll
-          ><img src="../../assets/skills.svg" alt="" class="imgLinks"
-        /></a>
-      </li>
-      <li class="opt">
-        <a href="#projectsWrapper" mdbPageScroll
-          ><img src="../../assets/projects.svg" alt="" class="imgLinks"
-        /></a>
-      </li>
-      <li class="first">
-        <a href="#contactWrapper" mdbPageScroll
-          ><img src="../../assets/contact.svg" alt="" class="imgLinks"
-        /></a>
-      </li>
-    </ul>
-  </div>
-
+  <!-- End Menu -->
+  <!-- Pages  -->
   <app-home> </app-home>
   <app-about></app-about>
   <app-skills></app-skills>
   <app-projects></app-projects>
   <app-contact></app-contact>
+  <!-- End Pages -->
 </div>

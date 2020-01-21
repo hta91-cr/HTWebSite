@@ -24,7 +24,7 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
             from: req.query.email,
             to: 'hta200891@gmail.com',
             subject: req.query.name + ' ' + req.query.lastname+ ' ' + req.query.email,
-            text: req.query.message,
+            html: req.query.message,
         }).then(result =>{
            return res.status(200).json({id:0, message:'Successfully sent email'})
         }).catch(err =>{

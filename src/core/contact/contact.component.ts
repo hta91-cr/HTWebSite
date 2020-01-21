@@ -21,9 +21,10 @@ export class ContactComponent implements OnInit {
   sendEmail() {
     let btnModal = document.getElementById('modal-btn') as HTMLElement
     this.mailForm.markAllAsTouched();
+    let msg = this.mailForm.controls['message'].value.replace(/(?:\r\n|\r|\n)/g, '<br>');
     if (this.mailForm.valid) {
       this.loading = true;
-      this.http.get("https://us-central1-htorres-25765.cloudfunctions.net/sendEmail?name=" + this.mailForm.controls['name'].value + "&lastname=" + this.mailForm.controls['lastname'].value + "&email=" + this.mailForm.controls['email'].value + "&message=" + this.mailForm.controls['message'].value)
+      this.http.get("https://us-central1-htorres-25765.cloudfunctions.net/sendEmail?name=" + this.mailForm.controls['name'].value + "&lastname=" + this.mailForm.controls['lastname'].value + "&email=" + this.mailForm.controls['email'].value + "&message=" + msg)
         .subscribe(res => {
           // console.log(res.message);
           this.loading = false;
