@@ -1,9 +1,10 @@
 <div class="wrapper">
   <!-- Menu -->
   <div class="menuPhone" *ngIf="innerWidth<576">
-    <div class="menuWrapper z-depth-2 animated fadeInDown" [@openClose]="showMainMenu ? 'open' : 'closed'">
+    <div class="menuWrapper z-depth-3 animated fadeInDown" [@openClose]="showMainMenu ? 'open' : 'closed'">
       <div class="logoWrapper" [@openClose]="showMainMenu ? 'open' : 'closed'">
-        <img src="../../assets/logo-white.webp" alt="" class="logo" />
+        <img src="../../assets/logo-white.png" alt="" class="logo" />
+
       </div>
       <div class="menuButtonWrapper" [@openClose]="showMainMenu ? 'open' : 'closed'">
         <img [@openClose]="showMainMenu ? 'open' : 'closed'" (click)="toggleMenu()" src="../../assets/hamburger.svg"
@@ -31,10 +32,10 @@
   <div class="menuPC" *ngIf="innerWidth>=576" [@openClose]="showMainMenu ? 'open' : 'closed'">
     <div class="container-fluid">
       <div class="row z-depth-2 animated fadeInDown menu-pc">
-        <div class="col-md-1 col-sm-1  logoWrapper">
-          <img src="../../assets/logo-white.webp" alt="" class="logo" />
-        </div>
-        <div class="col-sm-11 col-md-11">
+        <div class="col-md-3 col-sm-3  logoWrapper">
+          <img src="../../assets/logo-white.png" alt="" class="logo" />
+       </div>
+        <div class="col-sm-9 col-md-9">
           <ul class="options list-unstyled">
             <li class="opt">
               <a href="#aboutWrapper" mdbPageScroll><img src="../../assets/user.svg" alt="" class="imgLinks" /></a>

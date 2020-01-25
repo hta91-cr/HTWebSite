@@ -26,9 +26,10 @@
       position: relative;
       float: left;
       .logo {
-        height: 90px;
-        width: 90px;
-        margin-top: -20px;
+        height: 40px;
+        width: 40px;
+        margin-top: 5px;
+        margin-left: 7.5px;
       }
     }
   }
@@ -74,9 +75,9 @@
      .logoWrapper{
        width: 100px;
      .logo{
-      height: 90px;
-      width: 90px;
-      margin-top: -20px;
+      height: 45px;
+      width: 45px;
+      margin-top: 5px;
      }
     }
    }
@@ -85,7 +86,7 @@
     display: flex;
     padding-left: 0px;
     float: right;
-    margin-top: 8px;
+    margin-top: 7.5px;
     li {
       display: block;
       a {
@@ -97,7 +98,7 @@
       }
     }
     .opt {
-      margin-right: 45px;
+      margin-right: 55px;
     }
     .first {
       margin-right: 10px;
