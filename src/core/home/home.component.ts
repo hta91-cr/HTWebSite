@@ -89,12 +89,14 @@ export class HomeComponent implements OnInit {
       }
     };
 
-    // this.http.get('https://www.iplocate.io/api/lookup').subscribe((res:any) => {
-    // 	var visit: Visit = {
-    // 		ip: res.ip,
-    // 		country: res.country
-    // 	}
-    // 	this.service.addItem(visit)
-    // })
+    this.http
+      .get('https://www.iplocate.io/api/lookup')
+      .subscribe((res: any) => {
+        const visit: Visit = {
+          ip: res.ip,
+          country: res.country
+        };
+        this.service.addItem(visit);
+      });
   }
 }
