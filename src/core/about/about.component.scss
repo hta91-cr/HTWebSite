@@ -47,8 +47,10 @@
         margin: 25px 0 25px 0;
         text-align: center;
         width: 100%;
-        img {
-          width: 50px;
+        a{
+          background-color: $accent;
+          color: $light;
+          border-radius: 5px;
         }
       }
     }
